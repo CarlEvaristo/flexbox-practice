@@ -18,15 +18,16 @@ body {
     justify-content: center;
     align-items: center;
 }
-.container {
+.card {
     display:flex;
     flex-direction: column;
+    width: 80vw;
 }
 h1, p {
     margin: 0;
     padding: 0;
 }
-h1 {
+.card-title {
     font: normal normal bold 3.3rem Blinker;
     color: #05CBE9;
     opacity: 1;
@@ -38,9 +39,11 @@ p {
     opacity: 0.8;
     line-height: 1.6;
 }
-main{
+.card-text {
+    margin-bottom:2em;
+}
+.card-content{
     overflow: hidden;
-    height: 67vh;
     background-color: #111D4A;
     order:2;
     padding:3.5rem;
@@ -48,62 +51,73 @@ main{
     flex-direction: column;
     justify-content: flex-start;
 }
-#img-container {
-    background-image: url("../img/tech.jpg");
-    background-size: cover;
-    background-position: center;
+.img-container {
+    object-fit:cover;
+    object-position: center;
     order:1;
     height: 33vh;
 }
-footer {
+.card-footer {
     width:100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top:auto;
+    margin-top:5em;
 }
-footer p {
+.footer-txt {
     font-family: 'Blinker', sans-serif;
     font-size: 2.2rem;
     opacity: 50%;
     margin:0;
-    line-height: 1.3;
+    line-height: 1;
 }
 .accent {
     font-size: 2.8rem;
     font-weight: bold;
 }
-button {
-    display:inline-block;
-    font: normal normal bold 2.5rem Blinker;
+.read-more {
+    font-size: 2rem;
+    font-weight: bold;
     color: #111D4A;
     background-color: #05CBE9;
     border: none;
     padding: 0.5em 2em;
+    text-decoration: none;
+    margin-left:1em;
+    white-space: nowrap;
 }
 
-@media (min-width:850px) {
-    .container {
+@media (min-width:600px) {
+    .card {
+        width: 80vw;
+    }
+}
+
+@media (min-width:800px) {
+    .card {
         flex-direction: row;
         width: 60vw;
+        height: auto;
     }
     p {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
-    h1 {
+    .card-title {
         font-size: 3rem;
     }
-    main{
+    .card-content{
         min-width: 70%;
-        max-height: 50vh;
+        height:auto;
         align-items: flex-start;
     }
-    #img-container {
+    .img-container {
         min-width: 30%;
         height:auto;
     }
-    footer {
+    .card-footer {
+        margin-top:auto;
         display: flex;
         justify-content: space-between;
     }
 }
+
